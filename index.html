@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panorama Example</title>
+
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+</head>
+
+<body>
+
+
+    <div class="tour">
+        <div class="tour__head">
+            <h2>3D TOUR</h2>
+        </div>
+
+             <div  id="panorama" style="width: 100vw; height: 80vh;"></div>
+
+
+    <script>
+        const viewer = pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "scene1",
+                "sceneFadeDuration": 1000
+            },
+
+            "scenes": {
+                "scene1": {
+                    "title": "Scene 1",
+                    "type": "equirectangular",
+                    "panorama": "images/49449075608_6e38cceebf_k.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": 10,
+                            "yaw": 100,
+                            "type": "scene",
+                            "text": "Go to Scene 2",
+                            "sceneId": "scene2"
+                        } 
+                    ]
+                },
+                "scene2": {
+                    "title": "Scene 2",
+                    "type": "equirectangular",
+                    "panorama": "images/49449552131_0e65d7e89c_k.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -10,
+                            "yaw": 150,
+                            "type": "scene",
+                            "text": "Go to Scene 3",
+                            "sceneId": "scene3"
+                        }
+                    ]
+                }, "scene3": {
+                    "title": "Scene 3",
+                    "type": "equirectangular",
+                    "panorama": "images/panel1.jpeg",
+                    "hotSpots": [
+                        {
+                            "pitch": -10,
+                            "yaw": 150,
+                            "type": "scene",
+                            "text": "Go to Scene 4",
+                            "sceneId": "scene4"
+                        }
+                    ]
+                }, "scene4": {
+                    "title": "Scene 4",
+                    "type": "equirectangular",
+                    "panorama": "images/pano5.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -10,
+                            "yaw": 150,
+                            "type": "scene",
+                            "text": "Go to Scene 1",
+                            "sceneId": "scene1"
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+        
+
+    </div>
+</body> 
+
+
+</html>
